@@ -25,7 +25,7 @@ namespace FNA_RPG.Scenes
 
 		public override void Draw(SpriteBatch spriteBatch)
 		{
-			spriteBatch.Draw(Background, new Rectangle(0, 0, 1280, 720), Color.White);
+            spriteBatch.Draw(Background, new Rectangle(0, 0, ScreenScaler.VirtualWidth, ScreenScaler.VirtualHeight), Color.White);
 		}
 	}
 }

@@ -11,11 +11,14 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private SceneManager _sceneManager;
+    private ScreenScaler _scaler;
 
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
         Window.AllowUserResizing = true;
+        _graphics.PreferredBackBufferWidth = 1280;
+        _graphics.PreferredBackBufferHeight = 720;
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
     }
@@ -30,6 +33,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
+        _scaler = new ScreenScaler(GraphicsDevice);
         _sceneManager = new SceneManager(Content);
         _sceneManager.ChangeScene(new StarterMenu(_sceneManager));
         // TODO: use this.Content to load your game content here
@@ -40,6 +44,7 @@ public class Game1 : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
         
+        _scaler.Update();
         _sceneManager.Update(gameTime);
 
         base.Update(gameTime);
@@ -47,12 +52,11 @@ public class Game1 : Game
 
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
-
+        _scaler.BeginDraw();
         _spriteBatch.Begin();
         _sceneManager.Draw(_spriteBatch);
         _spriteBatch.End();
-
+        _scaler.EndDraw(_spriteBatch);
         base.Draw(gameTime);
     }
 }
