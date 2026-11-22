@@ -8,6 +8,7 @@ namespace FNA_RPG.Scenes
 	public class StarterMenu : Scene
 	{
 		private readonly SceneManager _sceneManager;
+		private SpriteFont _menuFont;
 
 		public StarterMenu(SceneManager sceneManager)
 		{
@@ -16,6 +17,7 @@ namespace FNA_RPG.Scenes
 
 		public override void LoadContent(ContentManager content)
 		{
+			_menuFont = content.Load<SpriteFont>("Fonts/MenuFont");
 			Background = content.Load<Texture2D>("Images/Backgrounds/StarterMenu");
 		}
 

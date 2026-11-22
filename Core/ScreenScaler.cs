@@ -51,5 +51,12 @@ namespace FNA_RPG.Core
 			spriteBatch.Draw(_target, _destination, Color.White);
 			spriteBatch.End();
         }
+        public Point ToVirtual(Point mouse)
+        {
+            float x = (mouse.X - _destination.X) / _scale;
+            float y = (mouse.Y - _destination.Y) / _scale;
+
+            return new Point((int)x, (int)y);
+        }
     }
 }

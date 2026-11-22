@@ -13,6 +13,14 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Fonts/SpriteFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/processorParam:Version=3.8.6.1
+/build:Fonts/SpriteFont.spritefont
+
 #begin Images/Backgrounds/Church.png
 /importer:TextureImporter
 /processor:TextureProcessor
