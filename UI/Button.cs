@@ -67,10 +67,10 @@ namespace FNA_RPG.UI
 
 		private void DrawGlow(SpriteBatch spriteBatch, Rectangle drawRect)
 		{
-			float s = drawRect.Width / (float)_texture.Width;
-			int pad = (int)(GlowFactory.Padding * s);
-			int originX = drawRect.X - pad;
-			int originY = drawRect.Y - pad;
+			float sx = drawRect.Width / (float)_texture.Width;
+			float sy = drawRect.Height / (float)_texture.Height;
+			int originX = drawRect.X - (int)(GlowFactory.Padding * sx);
+			int originY = drawRect.Y - (int)(GlowFactory.Padding * sy);
 
 			Vector2 mouse = Input.MousePosition.ToVector2();
 
@@ -82,10 +82,10 @@ namespace FNA_RPG.UI
 					int th = Math.Min(TileSize, _glow.Height - ty);
 					Rectangle source = new Rectangle(tx, ty, tw, th);
 
-					int x0 = originX + (int)MathF.Round(tx * s);
-					int y0 = originY + (int)MathF.Round(ty * s);
-					int x1 = originX + (int)MathF.Round((tx + tw) * s);
-					int y1 = originY + (int)MathF.Round((ty + th) * s);
+					int x0 = originX + (int)MathF.Round(tx * sx);
+					int y0 = originY + (int)MathF.Round(ty * sy);
+					int x1 = originX + (int)MathF.Round((tx + tw) * sx);
+					int y1 = originY + (int)MathF.Round((ty + th) * sy);
 					Rectangle dest = new Rectangle(x0, y0, x1 - x0, y1 - y0);
 
 					float dist = Vector2.Distance(dest.Center.ToVector2(), mouse);

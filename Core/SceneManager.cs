@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 namespace FNA_RPG.Core
 {
@@ -12,6 +13,19 @@ namespace FNA_RPG.Core
 		public SceneManager(ContentManager content)
 		{
 			_content = content;
+		}
+
+		private readonly Action _exitGame;
+
+		public SceneManager(ContentManager content, Action exitGame)
+		{
+			_content = content;
+			_exitGame = exitGame;
+		}
+
+		public void ExitGame()
+		{
+			_exitGame?.Invoke();
 		}
 
 		public void ChangeScene(Scene newScene)

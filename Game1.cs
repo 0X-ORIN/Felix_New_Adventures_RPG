@@ -20,12 +20,20 @@ public class Game1 : Game
         _graphics.PreferredBackBufferWidth = 1280;
         _graphics.PreferredBackBufferHeight = 720;
         Content.RootDirectory = "Content";
+        _sceneManager = new SceneManager(Content, Exit);
         IsMouseVisible = true;
     }
 
     protected override void Initialize()
     {
         base.Initialize();
+    }
+
+    protected override void OnExiting(object sender, ExitingEventArgs args)
+    {
+        // futuro auto save
+        // SaveSystem.AutoSave();
+        base.OnExiting(sender, args);
     }
 
     protected override void LoadContent()
