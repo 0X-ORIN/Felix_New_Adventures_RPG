@@ -15,7 +15,11 @@ namespace FNA_RPG.UI
 		private readonly Action _onClick;
         private bool _isHovered;
 		private readonly Texture2D _glow;
-		private float _glowAmount;
+		private float _hoverAmount;
+		private const float GrowAmount = 0.05f;
+		private const float GlowRadius = 150f;
+		private const float BaseGlow = 0.55f;
+		private const int TileSize = 16;          
 
         public Button(Texture2D texture, SpriteFont font,
 			string text, Rectangle bounds, Action onClick)
@@ -28,10 +32,13 @@ namespace FNA_RPG.UI
 			_glow = GlowFactory.Create(texture);
 		}
 
-		public void Update()
+		public void Update(GameTime gameTime)
 		{
             _isHovered = _bounds.Contains(Input.MousePosition);
-			_glowAmount = _isHovered ? 1f : 0f;
+			float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+			float target = _isHovered ? 1f : 0f;
+			float speed = _isHovered ? 14f : 9f;
+			_hoverAmount = MathHelper.Lerp(_hoverAmount, target, Math.Min(1f, speed * dt));
 
             if (_isHovered && Input.LeftClicked)
                 _onClick?.Invoke();
@@ -39,26 +46,55 @@ namespace FNA_RPG.UI
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			// 1. brilho (atrás de tudo)
-			if (_glowAmount > 0f)
-			{
-				float s = _bounds.Width / (float)_texture.Width;
-				int pad = (int)(GlowFactory.Padding * s);
-				Rectangle glowRect = new Rectangle(_bounds.X - pad, _bounds.Y - pad,
-					_bounds.Width + pad * 2, _bounds.Height + pad * 2);
-				spriteBatch.Draw(_glow, glowRect, Color.White * _glowAmount);
-			}
+			float scale = 1f + GrowAmount * _hoverAmount;
+			int w = (int)(_bounds.Width * scale);
+			int h = (int)(_bounds.Height * scale);
+			Rectangle drawRect = new Rectangle(_bounds.Center.X - w / 2, _bounds.Center.Y - h / 2, w, h);
 
-			// 2. o botão
-			spriteBatch.Draw(_texture, _bounds, Color.White);
+			if (_hoverAmount > 0.01f)
+				DrawGlow(spriteBatch, drawRect);
 
-			// 3. o texto
+			spriteBatch.Draw(_texture, drawRect, Color.White);
+
 			if (!string.IsNullOrEmpty(_text))
 			{
 				Vector2 tamanho = _font.MeasureString(_text);
-				Vector2 posicao = _bounds.Center.ToVector2() - tamanho / 2f;
-				spriteBatch.DrawString(_font, _text, posicao, Color.White);
+				Color textColor = Color.Lerp(Color.White, new Color(255, 240, 200), _hoverAmount);
+				spriteBatch.DrawString(_font, _text, drawRect.Center.ToVector2(), textColor,
+					0f, tamanho / 2f, scale, SpriteEffects.None, 0f);
 			}
+		}
+
+		private void DrawGlow(SpriteBatch spriteBatch, Rectangle drawRect)
+		{
+			float s = drawRect.Width / (float)_texture.Width;
+			int pad = (int)(GlowFactory.Padding * s);
+			int originX = drawRect.X - pad;
+			int originY = drawRect.Y - pad;
+
+			Vector2 mouse = Input.MousePosition.ToVector2();
+
+			for (int ty = 0; ty < _glow.Height; ty += TileSize)
+			{
+				for (int tx = 0; tx < _glow.Width; tx += TileSize)
+				{
+					int tw = Math.Min(TileSize, _glow.Width - tx);
+					int th = Math.Min(TileSize, _glow.Height - ty);
+					Rectangle source = new Rectangle(tx, ty, tw, th);
+
+					int x0 = originX + (int)MathF.Round(tx * s);
+					int y0 = originY + (int)MathF.Round(ty * s);
+					int x1 = originX + (int)MathF.Round((tx + tw) * s);
+					int y1 = originY + (int)MathF.Round((ty + th) * s);
+					Rectangle dest = new Rectangle(x0, y0, x1 - x0, y1 - y0);
+
+					float dist = Vector2.Distance(dest.Center.ToVector2(), mouse);
+					float near = MathHelper.Clamp(1f - dist / GlowRadius, 0f, 1f);
+					float intensity = BaseGlow + (1f - BaseGlow) * near;
+
+					spriteBatch.Draw(_glow, dest, source, Color.White * (intensity * _hoverAmount));
 				}
 			}
+		}
+	}
 }

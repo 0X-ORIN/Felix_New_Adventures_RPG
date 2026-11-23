@@ -31,7 +31,7 @@ namespace FNA_RPG.Scenes
 
 		public override void Update(GameTime gameTime)
 		{
-			_testButton.Update();
+			_testButton.Update(gameTime);
 		}
 
 		public override void Draw(SpriteBatch spriteBatch)
