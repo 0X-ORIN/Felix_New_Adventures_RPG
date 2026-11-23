@@ -25,8 +25,6 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
-
         base.Initialize();
     }
 
@@ -36,7 +34,6 @@ public class Game1 : Game
         _scaler = new ScreenScaler(GraphicsDevice);
         _sceneManager = new SceneManager(Content);
         _sceneManager.ChangeScene(new StarterMenu(_sceneManager));
-        // TODO: use this.Content to load your game content here
     }
 
     protected override void Update(GameTime gameTime)
@@ -45,6 +42,7 @@ public class Game1 : Game
             Exit();
         
         _scaler.Update();
+        Input.Update(_scaler);
         _sceneManager.Update(gameTime);
 
         base.Update(gameTime);
