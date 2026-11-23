@@ -10,11 +10,6 @@ namespace FNA_RPG.Core
 		private readonly ContentManager _content;
 		private Scene _currentScene;
 
-		public SceneManager(ContentManager content)
-		{
-			_content = content;
-		}
-
 		private readonly Action _exitGame;
 
 		public SceneManager(ContentManager content, Action exitGame)

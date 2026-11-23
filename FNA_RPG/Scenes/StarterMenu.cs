@@ -45,7 +45,7 @@ namespace FNA_RPG.Scenes
 			Song music = content.Load<Song>("Audio/vampires_piano");
 			AudioManager.PlayMusic(music);
 			
-			AddButton("New Game", 0, () => { });
+			AddButton("New Game", 0, () => _sceneManager.ChangeScene(new Lobby(_sceneManager)));
 			AddButton("Load Game", 1, () => { });
 			AddButton("Settings", 2, () => { });
 			AddButton("Credits", 3, () => { });

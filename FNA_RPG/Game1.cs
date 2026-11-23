@@ -15,6 +15,7 @@ public class Game1 : Game
 
     public Game1()
     {
+        Window.Title = "Félix New Adventures";
         _graphics = new GraphicsDeviceManager(this);
         Window.AllowUserResizing = true;
         _graphics.PreferredBackBufferWidth = 1280;
@@ -40,7 +41,7 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         _scaler = new ScreenScaler(GraphicsDevice);
-        _sceneManager = new SceneManager(Content);
+        _sceneManager = new SceneManager(Content, Exit);
         _sceneManager.ChangeScene(new StarterMenu(_sceneManager));
     }
 
