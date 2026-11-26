@@ -140,19 +140,6 @@
 /processorParam:Version=3.8.6.1
 /build:Images/Interface/MenuButton.png;Images/Interface/MenuButton
 
-#begin Images/Interface/SelectButton.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/processorParam:Version=3.8.6.1
-/build:Images/Interface/SelectButton.png;Images/Interface/SelectButton
-
 #begin Images/Interface/TextBox.png
 /importer:TextureImporter
 /processor:TextureProcessor

@@ -15,11 +15,11 @@ public class Game1 : Game
 
     public Game1()
     {
-        Window.Title = "Félix New Adventures";
+        Window.Title = "Felix New Adventures";
         _graphics = new GraphicsDeviceManager(this);
         Window.AllowUserResizing = true;
-        _graphics.PreferredBackBufferWidth = 1280;
-        _graphics.PreferredBackBufferHeight = 720;
+        _graphics.PreferredBackBufferWidth = 960;
+        _graphics.PreferredBackBufferHeight = 540;
         Content.RootDirectory = "Content";
         _sceneManager = new SceneManager(Content, Exit);
         IsMouseVisible = true;
