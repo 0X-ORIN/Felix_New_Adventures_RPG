@@ -17,22 +17,29 @@ namespace FNA_RPG.UI
 
 			Texture2D menuIcon = content.Load<Texture2D>("Images/Interface/MenuButton");
 			Texture2D mapIcon = content.Load<Texture2D>("Images/Interface/MapButton");
+			Texture2D invIcon = content.Load<Texture2D>("Images/Interface/InvButton");
+			Texture2D settingsIcon = content.Load<Texture2D>("Images/Interface/ConfigButton");
 
-			// sem texto e sem fonte: null, null
-			// mantenha a proporção de cada imagem (chute inicial, ajuste olhando)
-			_buttons.Add(new Button(menuIcon, null, null, new Rectangle(1190, 20, 65, 72), () => { }));
-			_buttons.Add(new Button(mapIcon, null, null, new Rectangle(1110, 20, 69, 72), () => { }));
+			_buttons.Add(new Button(mapIcon,      null, null, new Rectangle(796,  20, 100, 100), () => { }, false));
+			_buttons.Add(new Button(menuIcon,     null, null, new Rectangle(912,  20, 100, 100), () => { }, false));
+			_buttons.Add(new Button(invIcon,      null, null, new Rectangle(1028, 20, 100, 100), () => { }, false));
+			_buttons.Add(new Button(settingsIcon, null, null, new Rectangle(1144, 20, 100, 100), () => { }, false));
 		}
 
 		public void Update(GameTime gameTime)
 		{
-			// foreach: cada botão do HUD faz o Update
+			foreach (Button button in _buttons)
+			{
+				button.Update(gameTime);
+			}
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			// foreach: cada botão do HUD faz o Draw
-			// depois: barras de HP e MP
+			foreach (Button button in _buttons)
+			{
+				button.Draw(spriteBatch);
+			}
 		}
 	}
 }

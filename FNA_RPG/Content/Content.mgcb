@@ -36,6 +36,45 @@
 /processorParam:Version=3.8.6.1
 /build:Fonts/TitleFont.spritefont
 
+#begin Images/Backgrounds/AtributeObelisc.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Backgrounds/AtributeObelisc.png;Images/Backgrounds/AtributeObelisc
+
+#begin Images/Backgrounds/Board.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Backgrounds/Board.png;Images/Backgrounds/Board
+
+#begin Images/Backgrounds/Church.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Backgrounds/Church.png;Images/Backgrounds/Church
+
 #begin Images/Backgrounds/Church.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -62,6 +101,32 @@
 /processorParam:Version=3.8.6.1
 /build:Images/Backgrounds/Lobby.png;Images/Backgrounds/Lobby
 
+#begin Images/Backgrounds/Lobby.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Backgrounds/Lobby.png;Images/Backgrounds/Lobby
+
+#begin Images/Backgrounds/Map.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Backgrounds/Map.png;Images/Backgrounds/Map
+
 #begin Images/Backgrounds/Menu.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -75,6 +140,32 @@
 /processorParam:Version=3.8.6.1
 /build:Images/Backgrounds/Menu.png;Images/Backgrounds/Menu
 
+#begin Images/Backgrounds/Menu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Backgrounds/Menu.png;Images/Backgrounds/Menu
+
+#begin Images/Backgrounds/Missions.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Backgrounds/Missions.png;Images/Backgrounds/Missions
+
 #begin Images/Backgrounds/StarterMenu.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -87,6 +178,45 @@
 /processorParam:TextureFormat=Color
 /processorParam:Version=3.8.6.1
 /build:Images/Backgrounds/StarterMenu.png;Images/Backgrounds/StarterMenu
+
+#begin Images/Backgrounds/StarterMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Backgrounds/StarterMenu.png;Images/Backgrounds/StarterMenu
+
+#begin Images/Backgrounds/TrainingCamp.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Backgrounds/TrainingCamp.png;Images/Backgrounds/TrainingCamp
+
+#begin Images/Interface/BaseButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Interface/BaseButton.png;Images/Interface/BaseButton
 
 #begin Images/Interface/BaseButton.png
 /importer:TextureImporter
@@ -114,6 +244,71 @@
 /processorParam:Version=3.8.6.1
 /build:Images/Interface/ConfigButton.png;Images/Interface/ConfigButton
 
+#begin Images/Interface/ConfigButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Interface/ConfigButton.png;Images/Interface/ConfigButton
+
+#begin Images/Interface/CrystalInteraction.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Interface/CrystalInteraction.png;Images/Interface/CrystalInteraction
+
+#begin Images/Interface/InvButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Interface/InvButton.png;Images/Interface/InvButton
+
+#begin Images/Interface/Inventory.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Interface/Inventory.png;Images/Interface/Inventory
+
+#begin Images/Interface/MapButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Interface/MapButton.png;Images/Interface/MapButton
+
 #begin Images/Interface/MapButton.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -139,6 +334,45 @@
 /processorParam:TextureFormat=Color
 /processorParam:Version=3.8.6.1
 /build:Images/Interface/MenuButton.png;Images/Interface/MenuButton
+
+#begin Images/Interface/MenuButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Interface/MenuButton.png;Images/Interface/MenuButton
+
+#begin Images/Interface/PowerPlate.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Interface/PowerPlate.png;Images/Interface/PowerPlate
+
+#begin Images/Interface/TextBox.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.1
+/build:Images/Interface/TextBox.png;Images/Interface/TextBox
 
 #begin Images/Interface/TextBox.png
 /importer:TextureImporter

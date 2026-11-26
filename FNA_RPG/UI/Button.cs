@@ -16,20 +16,24 @@ namespace FNA_RPG.UI
         private bool _isHovered;
 		private readonly Texture2D _glow;
 		private float _hoverAmount;
+		private readonly bool _useGlow;
 		private const float GrowAmount = 0.05f;
-		private const float GlowRadius = 150f;
+		private const float GlowRadius = 250f;
 		private const float BaseGlow = 0.55f;
 		private const int TileSize = 16;          
 
         public Button(Texture2D texture, SpriteFont font,
-			string text, Rectangle bounds, Action onClick)
+			string text, Rectangle bounds, Action onClick, bool useGlow = true)
 		{
 			_texture = texture;
             _font = font;
             _text = text;
             _bounds = bounds;
             _onClick = onClick;
-			_glow = GlowFactory.Create(texture);
+			_useGlow = useGlow;
+
+			if (useGlow)
+				_glow = GlowFactory.Create(texture);
 		}
 
 		public void Update(GameTime gameTime)
@@ -51,7 +55,7 @@ namespace FNA_RPG.UI
 			int h = (int)(_bounds.Height * scale);
 			Rectangle drawRect = new Rectangle(_bounds.Center.X - w / 2, _bounds.Center.Y - h / 2, w, h);
 
-			if (_hoverAmount > 0.01f)
+			if (_useGlow && _hoverAmount > 0.01f)
 				DrawGlow(spriteBatch, drawRect);
 
 			spriteBatch.Draw(_texture, drawRect, Color.White);

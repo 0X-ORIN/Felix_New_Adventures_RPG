@@ -12,6 +12,7 @@ namespace FNA_RPG.Scenes
     public class Lobby : Scene
     {
         private readonly SceneManager _sceneManager;
+        private Hud _hud;
 
         public Lobby(SceneManager sceneManager)
         {
@@ -21,14 +22,16 @@ namespace FNA_RPG.Scenes
         public override void LoadContent(ContentManager content)
         {
             Background = content.Load<Texture2D>("Images/Backgrounds/Lobby");
+            _hud = new Hud(_sceneManager, content);
         }
         public override void Update(GameTime gameTime)
         {
-            
+            _hud.Update(gameTime);
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Background, new Rectangle(0, 0, ScreenScaler.VirtualWidth, ScreenScaler.VirtualHeight), Color.White);
+            _hud.Draw(spriteBatch);
         }
     }
 }
