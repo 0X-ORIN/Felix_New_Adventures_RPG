@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using FNA_RPG.Core;
+using System;
 
 namespace FNA_RPG.UI
 {
@@ -10,6 +11,20 @@ namespace FNA_RPG.UI
 	{
 		private readonly SceneManager _sceneManager;
 		private readonly List<Button> _buttons = new();
+
+		private const int IconHeight = 100;
+		private const int Gap = 16;
+		private int _nextRight = ScreenScaler.VirtualWidth - 36;
+
+		private void AddIcon(Texture2D texture, Action onClick)
+		{
+			int width = (int)(IconHeight * texture.Width / (float)texture.Height);
+
+			_buttons.Add(new Button(texture, null, null,
+				new Rectangle(_nextRight - width, 20, width, IconHeight), onClick, false));
+
+			_nextRight -= width + Gap;
+		}
 
 		public Hud(SceneManager sceneManager, ContentManager content)
 		{
@@ -20,10 +35,10 @@ namespace FNA_RPG.UI
 			Texture2D invIcon = content.Load<Texture2D>("Images/Interface/InvButton");
 			Texture2D settingsIcon = content.Load<Texture2D>("Images/Interface/ConfigButton");
 
-			_buttons.Add(new Button(mapIcon,      null, null, new Rectangle(796,  20, 100, 100), () => { }, false));
-			_buttons.Add(new Button(menuIcon,     null, null, new Rectangle(912,  20, 100, 100), () => { }, false));
-			_buttons.Add(new Button(invIcon,      null, null, new Rectangle(1028, 20, 100, 100), () => { }, false));
-			_buttons.Add(new Button(settingsIcon, null, null, new Rectangle(1144, 20, 100, 100), () => { }, false));
+			AddIcon(settingsIcon, () => { });
+			AddIcon(invIcon, () => { });
+			AddIcon(menuIcon, () => { });
+			AddIcon(mapIcon, () => { });
 		}
 
 		public void Update(GameTime gameTime)

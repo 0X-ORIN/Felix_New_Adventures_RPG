@@ -49,7 +49,7 @@ namespace FNA_RPG.Core
                 if (file == null) continue;
 
                 var method = frame.GetMethod();
-                sb.AppendLine($"{Path.GetFileName(file)}:{frame.GetFileLineNumber()}  {method?.DeclaringType?.Name}.{method?.Name}");
+                sb.AppendLine($"{Path.GetFileName(file)}: {frame.GetFileLineNumber()}  {method?.DeclaringType?.Name}.{method?.Name}");
             }
 
             sb.AppendLine();

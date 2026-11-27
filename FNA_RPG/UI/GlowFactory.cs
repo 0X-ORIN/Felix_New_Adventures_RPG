@@ -7,7 +7,7 @@ namespace FNA_RPG.UI
 {
     public static class GlowFactory
     {
-        public const int Padding = 48;
+		public static int PaddingFor(Texture2D source) => Math.Max(4, source.Width / 18);
         private static readonly Dictionary<Texture2D, Texture2D> _cache = new();
         
 		private static float[] Blur(float[] data, int w, int h, int radius)
@@ -42,8 +42,12 @@ namespace FNA_RPG.UI
             if (_cache.TryGetValue(source, out Texture2D cached))
 				return cached;
 
-			int w = source.Width + Padding * 2;
-			int h = source.Height + Padding * 2;
+			int padding = PaddingFor(source);
+			int rTight = Math.Max(1, source.Width / 200);
+			int rWide = Math.Max(2, source.Width / 54);
+
+			int w = source.Width + padding * 2;
+			int h = source.Height + padding * 2;
 
 			Color[] pixels = new Color[source.Width * source.Height];
 			source.GetData(pixels);
@@ -51,10 +55,10 @@ namespace FNA_RPG.UI
 			float[] alpha = new float[w * h];
 			for (int y = 0; y < source.Height; y++)
 				for (int x = 0; x < source.Width; x++)
-					alpha[(y + Padding) * w + (x + Padding)] = pixels[y * source.Width + x].A / 255f;
+					alpha[(y + padding) * w + (x + padding)] = pixels[y * source.Width + x].A / 255f;
 
-			float[] tight = Blur(Blur(alpha, w, h, 4), w, h, 4);
-			float[] wide = Blur(Blur(alpha, w, h, 16), w, h, 16);
+			float[] tight = Blur(Blur(alpha, w, h, rTight), w, h, rTight);
+			float[] wide = Blur(Blur(alpha, w, h, rWide), w, h, rWide);
 
 			Color[] result = new Color[w * h];
 			Vector3 gold = new Vector3(1f, 0.65f, 0f);

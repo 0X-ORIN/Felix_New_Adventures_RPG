@@ -27,7 +27,6 @@ public class Game1 : Game
         _graphics.PreferredBackBufferWidth = 960;
         _graphics.PreferredBackBufferHeight = 540;
         Content.RootDirectory = "Content";
-        _sceneManager = new SceneManager(Content, Exit);
         IsMouseVisible = true;
     }
 

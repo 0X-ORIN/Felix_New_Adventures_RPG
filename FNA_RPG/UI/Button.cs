@@ -73,8 +73,8 @@ namespace FNA_RPG.UI
 		{
 			float sx = drawRect.Width / (float)_texture.Width;
 			float sy = drawRect.Height / (float)_texture.Height;
-			int originX = drawRect.X - (int)(GlowFactory.Padding * sx);
-			int originY = drawRect.Y - (int)(GlowFactory.Padding * sy);
+			int originX = drawRect.X - (int)(GlowFactory.PaddingFor(_texture) * sx);
+			int originY = drawRect.Y - (int)(GlowFactory.PaddingFor(_texture) * sy);
 
 			Vector2 mouse = Input.MousePosition.ToVector2();
 
